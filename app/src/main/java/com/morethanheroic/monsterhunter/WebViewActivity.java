@@ -64,16 +64,8 @@ public class WebViewActivity extends Activity {
     }
 
     private void setupWebViewContent(final WebView webView) {
-        webView.loadDataWithBaseURL("file:///android_asset/", getIndexHtml(), "text/html", "utf-8", "about:blank");
+          webView.setWebViewClient(new MyAppWebViewClient());
+          webView.loadUrl("http://immanuelcommando.com");
     }
 
-    private String getIndexHtml() {
-        try (InputStream is = getAssets().open("index.html")) {
-            return IOUtils.toString(is);
-        } catch (IOException e) {
-            Log.e("IndexHtmlLoader", "Failed to load the index html.", e);
-
-            throw new RuntimeException("Failed to load the index html.");
-        }
-    }
 }
