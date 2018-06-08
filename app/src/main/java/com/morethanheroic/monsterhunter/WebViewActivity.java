@@ -33,8 +33,8 @@ public class WebViewActivity extends Activity {
 
     private void setupContentContainer() {
         setContentView(R.layout.activity_web_view);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
     }
 
     private void setupWebView() {
